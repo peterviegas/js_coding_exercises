@@ -8,14 +8,16 @@ export function capitalize(word) {
 export function generateInitials(firstName, lastName) {
     if (firstName === undefined) throw new Error("firstName is required");
     if (lastName === undefined) throw new Error("lastName is required");
-    console.log(firstName[0] + "." + lastName[0])
     return firstName[0] + "." + lastName[0]
 }
 
 export function addVAT(originalPrice, vatRate) {
     if (originalPrice === undefined) throw new Error("originalPrice is requied");
     if (vatRate === undefined) throw new Error("vatRate is required");
-    // Add your code here!
+    //console.log('Valor = ', Math.round(originalPrice + (originalPrice * vatRate) / 100))
+    //return Math.round(originalPrice + (originalPrice * vatRate) / 100)
+    console.log('Valor = ', parseFloat((originalPrice + (originalPrice * vatRate) / 100).toFixed(2)))
+    return parseFloat((originalPrice + (originalPrice * vatRate) / 100).toFixed(2))
 }
 
 export function getSalePrice(originalPrice, reduction) {
