@@ -14,16 +14,13 @@ export function generateInitials(firstName, lastName) {
 export function addVAT(originalPrice, vatRate) {
     if (originalPrice === undefined) throw new Error("originalPrice is requied");
     if (vatRate === undefined) throw new Error("vatRate is required");
-    //console.log('Valor = ', Math.round(originalPrice + (originalPrice * vatRate) / 100))
-    //return Math.round(originalPrice + (originalPrice * vatRate) / 100)
-    console.log('Valor = ', parseFloat((originalPrice + (originalPrice * vatRate) / 100).toFixed(2)))
     return parseFloat((originalPrice + (originalPrice * vatRate) / 100).toFixed(2))
 }
 
 export function getSalePrice(originalPrice, reduction) {
     if (originalPrice === undefined) throw new Error("originalPrice is required");
     if (reduction === undefined) throw new Error("reduction is required");
-    // Add your code here!
+    return parseFloat((originalPrice - (originalPrice * reduction) / 100).toFixed(2))
 }
 
 export function getMiddleCharacter(str) {
