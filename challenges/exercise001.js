@@ -25,7 +25,12 @@ export function getSalePrice(originalPrice, reduction) {
 
 export function getMiddleCharacter(str) {
     if (str === undefined) throw new Error("str is required");
-    // Add your code here!
+    var ctrl = str.length % 2
+    if (ctrl === 0) {
+        return str[(str.length / 2) - 1] + str[(str.length / 2)]
+    } else {
+        return str[Math.floor(str.length / 2)]
+    }
 }
 
 export function reverseWord(word) {
