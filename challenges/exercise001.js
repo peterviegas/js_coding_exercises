@@ -60,7 +60,15 @@ export function countLinuxUsers(users) {
 
 export function getMeanScore(scores) {
     if (scores === undefined) throw new Error("scores is required");
-    // Add your code here!
+    let cont = 0;
+    let scoreMed = 0;
+
+    for (var i = 0; i < scores.length; i++) {
+        cont += 1;
+        scoreMed += scores[i];
+    }
+
+    return parseFloat((scoreMed / cont).toFixed(2));
 }
 
 export function simpleFizzBuzz(n) {
