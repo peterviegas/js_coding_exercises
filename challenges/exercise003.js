@@ -12,9 +12,17 @@ export function getSquares(nums) {
 export function camelCaseWords(words) {
     if (words === undefined) throw new Error("words is required");
 
-    for (var i = 0; i < words.length; i++) {
+    let wordCamelCase = "";
 
+    for (var i = 0; i < words.length; i++) {
+        if (i == 0) {
+            wordCamelCase += words[i];
+        } else {
+            var aux = words[i];
+            wordCamelCase += aux[0].toUpperCase() + aux.slice(1).toLowerCase();
+        }
     }
+    return wordCamelCase
 }
 
 export function getTotalSubjects(people) {
