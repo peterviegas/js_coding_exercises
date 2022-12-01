@@ -40,7 +40,15 @@ export function getTotalSubjects(people) {
 export function checkIngredients(menu, ingredient) {
     if (menu === undefined) throw new Error("menu is required");
     if (!ingredient) throw new Error("ingredient is required");
-    // Your code here!
+
+    let ingredientFound = false
+    for (var i = 0; i < menu.length; i++) {
+        if (menu[i].ingredients.includes(ingredient) === true) {
+            ingredientFound = true;
+            break;
+        }
+    }
+    return ingredientFound
 }
 
 export function duplicateNumbers(arr1, arr2) {
