@@ -25,7 +25,7 @@ export function getSalePrice(originalPrice, reduction) {
 
 export function getMiddleCharacter(str) {
     if (str === undefined) throw new Error("str is required");
-    var ctrl = str.length % 2
+    let ctrl = str.length % 2
     if (ctrl === 0) {
         return str[(str.length / 2) - 1] + str[(str.length / 2)]
     } else {
@@ -50,8 +50,8 @@ export function countLinuxUsers(users) {
     if (users === undefined) throw new Error("users is required");
 
     let cont = 0;
-    for (var i = 0; i < users.length; i++) {
-        if (users[i].type == 'Linux') {
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].type === 'Linux') {
             cont += 1;
         }
     }
@@ -63,7 +63,7 @@ export function getMeanScore(scores) {
     let cont = 0;
     let scoreMed = 0;
 
-    for (var i = 0; i < scores.length; i++) {
+    for (let i = 0; i < scores.length; i++) {
         cont += 1;
         scoreMed += scores[i];
     }
@@ -74,11 +74,11 @@ export function getMeanScore(scores) {
 export function simpleFizzBuzz(n) {
     if (n === undefined) throw new Error("n is required");
 
-    if (n % 3 == 0 && n % 5 == 0) {
+    if (n % 3 === 0 && n % 5 === 0) {
         return 'fizzbuzz';
-    } else if (n % 3 == 0) {
+    } else if (n % 3 === 0) {
         return 'fizz';
-    } else if (n % 5 == 0) {
+    } else if (n % 5 === 0) {
         return 'buzz';
     } else {
         return n;

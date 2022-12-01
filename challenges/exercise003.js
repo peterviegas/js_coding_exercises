@@ -1,10 +1,13 @@
 export function getSquares(nums) {
     if (nums === undefined) throw new Error("nums is required");
-    const numsDouble = [];
+    //const numsDouble = [];
 
-    for (var i = 0; i < nums.length; i++) {
-        numsDouble.push(nums[i] * nums[i]);
-    }
+    //for (let i = 0; i < nums.length; i++) {
+    //    numsDouble.push(nums[i] * nums[i]);
+    //}
+    const numsDouble = nums.map(function(num) {
+        return num * num;
+    });
 
     return numsDouble
 }
@@ -14,11 +17,11 @@ export function camelCaseWords(words) {
 
     let wordCamelCase = "";
 
-    for (var i = 0; i < words.length; i++) {
-        if (i == 0) {
+    for (let i = 0; i < words.length; i++) {
+        if (i === 0) {
             wordCamelCase += words[i];
         } else {
-            var aux = words[i];
+            let aux = words[i];
             wordCamelCase += aux[0].toUpperCase() + aux.slice(1).toLowerCase();
         }
     }
@@ -29,7 +32,7 @@ export function getTotalSubjects(people) {
     if (people === undefined) throw new Error("people is required");
 
     let subjects = 0;
-    for (var i = 0; i < people.length; i++) {
+    for (let i = 0; i < people.length; i++) {
         if (people[i].subjects.length > 0) {
             subjects = subjects + people[i].subjects.length;
         }
@@ -42,7 +45,7 @@ export function checkIngredients(menu, ingredient) {
     if (!ingredient) throw new Error("ingredient is required");
 
     let ingredientFound = false
-    for (var i = 0; i < menu.length; i++) {
+    for (let i = 0; i < menu.length; i++) {
         if (menu[i].ingredients.includes(ingredient) === true) {
             ingredientFound = true;
             break;
