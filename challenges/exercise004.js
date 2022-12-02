@@ -13,7 +13,14 @@ export function findSmallNums(nums) {
 export function findNamesBeginningWith(names, char) {
     if (!names) throw new Error("names is required");
     if (!char) throw new Error("char is required");
-    // Your code here
+
+    const namesBeginWith = [];
+    names.forEach(function(item) {
+        if (item[0] === char) {
+            namesBeginWith.push(item)
+        }
+    });
+    return namesBeginWith;
 }
 
 export function findVerbs(words) {
