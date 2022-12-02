@@ -25,7 +25,15 @@ export function findNamesBeginningWith(names, char) {
 
 export function findVerbs(words) {
     if (!words) throw new Error("words is required");
-    // Your code here
+
+    const findVerb = [];
+    words.forEach(function(item) {
+        const infinitive = item.split(" ");
+        if (infinitive[0] === 'to') {
+            findVerb.push(item)
+        }
+    });
+    return findVerb;
 }
 
 export function getIntegers(nums) {
