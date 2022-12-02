@@ -54,13 +54,16 @@ export function getCities(users) {
     const getCities = users.map(function(item) {
         return item.data.city.displayName;
     });
-
     return getCities;
 }
 
 export function getSquareRoots(nums) {
     if (!nums) throw new Error("nums is required");
-    // Your code here
+
+    const getSquareRoot = nums.map(function(item) {
+        return parseFloat((Math.sqrt(item)).toFixed(2));
+    });
+    return getSquareRoot;
 }
 
 export function findSentencesContaining(sentences, str) {
