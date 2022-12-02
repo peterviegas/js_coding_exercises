@@ -85,13 +85,7 @@ export function getLongestSides(triangles) {
     if (!triangles) throw new Error("triangles is required");
 
     const getLongestSide = triangles.map(function(item) {
-        if ((item[0] > item[1]) && (item[0] > item[2])) {
-            return item[0];
-        } else if (item[1] > item[2]) {
-            return item[1];
-        } else {
-            return item[2];
-        }
+        return Math.max(...(item));
     });
     return getLongestSide;
 }
