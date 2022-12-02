@@ -38,12 +38,24 @@ export function findVerbs(words) {
 
 export function getIntegers(nums) {
     if (!nums) throw new Error("nums is required");
-    // Your code here
+
+    const getInteger = [];
+    nums.forEach(function(item) {
+        if (Number.isSafeInteger(item)) {
+            getInteger.push(item)
+        }
+    });
+    return getInteger;
 }
 
 export function getCities(users) {
     if (!users) throw new Error("users is required");
-    // Your code here
+
+    const getCities = users.map(function(item) {
+        return item.data.city.displayName;
+    });
+
+    return getCities;
 }
 
 export function getSquareRoots(nums) {
