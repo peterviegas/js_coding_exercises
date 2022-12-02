@@ -74,7 +74,6 @@ export function findSentencesContaining(sentences, str) {
     sentences.forEach(function(item) {
         const indiceStr = item.search(str);
         const indiceStrSensitive = item.search(str[0].toUpperCase() + str.slice(1).toLowerCase());
-        console.log('indiceStr', indiceStr)
         if (indiceStr != -1 || indiceStrSensitive != -1) {
             findSentenceContaining.push(item)
         }
@@ -84,5 +83,15 @@ export function findSentencesContaining(sentences, str) {
 
 export function getLongestSides(triangles) {
     if (!triangles) throw new Error("triangles is required");
-    // Your code here
+
+    const getLongestSide = triangles.map(function(item) {
+        if ((item[0] > item[1]) && (item[0] > item[2])) {
+            return item[0];
+        } else if (item[1] > item[2]) {
+            return item[1];
+        } else {
+            return item[2];
+        }
+    });
+    return getLongestSide;
 }
