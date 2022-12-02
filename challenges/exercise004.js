@@ -69,7 +69,17 @@ export function getSquareRoots(nums) {
 export function findSentencesContaining(sentences, str) {
     if (!sentences) throw new Error("sentences is required");
     if (!str) throw new Error("str is required");
-    // Your code here
+
+    const findSentenceContaining = [];
+    sentences.forEach(function(item) {
+        const indiceStr = item.search(str);
+        const indiceStrSensitive = item.search(str[0].toUpperCase() + str.slice(1).toLowerCase());
+        console.log('indiceStr', indiceStr)
+        if (indiceStr != -1 || indiceStrSensitive != -1) {
+            findSentenceContaining.push(item)
+        }
+    });
+    return findSentenceContaining;
 }
 
 export function getLongestSides(triangles) {
