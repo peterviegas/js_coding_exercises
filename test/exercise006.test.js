@@ -99,6 +99,27 @@ describe("getComplementaryDNA", () => {
     });
 });
 
+describe("isItPrime", () => {
+    test("receive a number and return true/false depending on whether it is a prime number", () => {
+        expect(isItPrime(13)).toBe(true);
+    });
+    test("receive a number and return true/false depending on whether it is a prime number", () => {
+        expect(isItPrime(25)).toBe(false);
+    });
+    test("receive a number 1 and return true/false depending on whether it is a prime number", () => {
+        expect(isItPrime(1)).toBe(false);
+    });
+    test("receive a negative number and return true/false depending on whether it is a prime number", () => {
+        expect(isItPrime(-11)).toBe(false);
+    });
+    test("receive number 13 and return true depending on whether it is a prime number", () => {
+        expect(isItPrime(13)).toBe(true);
+    });
+    test("receive number 97 and return true depending on whether it is a prime number", () => {
+        expect(isItPrime(97)).toBe(true);
+    });
+
+});
 describe("createMatrix", () => {
     it("returns a Matrix of 1 x 1 when passes 1", () => {
         const result = createMatrix(1, "foo");
