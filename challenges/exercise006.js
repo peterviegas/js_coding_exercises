@@ -62,7 +62,15 @@ export const createMatrix = (n, fill) => {
     if (n === undefined) throw new Error("n is required");
     if (fill === undefined) throw new Error("fill is required");
 
-
+    let arrayMatrix = []
+    for (let i = 0; i < n; i++) {
+        let arrayAux = [];
+        for (let j = 0; j < n; j++) {
+            arrayAux.push(fill);
+        }
+        arrayMatrix.push(arrayAux);
+    }
+    return arrayMatrix
 };
 
 /**
@@ -81,9 +89,13 @@ export const areWeCovered = (staff, day) => {
     if (staff === undefined) throw new Error("staff is required");
     if (day === undefined) throw new Error("day is required");
 
-    console.log('staff', staff);
-    console.log('day', day);
-    if (staff.length === 0) {
-        return false;
+    let countDays = 0;
+    for (let i = 0; i < staff.length; i++) {
+        for (let j = 0; j < staff[i].rota.length; j++) {
+            if (staff[i].rota[j].toLowerCase() === day.toLowerCase()) {
+                countDays += 1;
+            }
+        }
     }
+    return countDays >= 3;
 };
