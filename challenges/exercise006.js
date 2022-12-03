@@ -5,7 +5,19 @@
  * @returns {Number}
  */
 export const sumMultiples = (arr) => {
-  if (arr === undefined) throw new Error("arr is required");
+    if (arr === undefined) throw new Error("arr is required");
+    if (!arr) throw new Error("arr is required");
+    if (!Array.isArray(arr)) throw new Error("an Array is required");
+    // loop throught the array
+    // if the number / 3 or 5 (%), add to a total
+    // return total
+    let total = 0;
+    arr.forEach(n => {
+        if (n % 5 === 0 || n % 3 === 0) {
+            total += n;
+        }
+    });
+    return total;
 };
 
 /**
@@ -14,7 +26,7 @@ export const sumMultiples = (arr) => {
  * @returns {Boolean}
  */
 export const isValidDNA = (str) => {
-  if (str === undefined) throw new Error("str is required");
+    if (str === undefined) throw new Error("str is required");
 };
 
 /**
@@ -23,7 +35,7 @@ export const isValidDNA = (str) => {
  * @returns {String}
  */
 export const getComplementaryDNA = (str) => {
-  if (str === undefined) throw new Error("str is required");
+    if (str === undefined) throw new Error("str is required");
 };
 
 /**
@@ -32,7 +44,7 @@ export const getComplementaryDNA = (str) => {
  * @returns {Boolean}
  */
 export const isItPrime = (n) => {
-  if (n === undefined) throw new Error("n is required");
+    if (n === undefined) throw new Error("n is required");
 };
 
 /**
@@ -47,8 +59,10 @@ export const isItPrime = (n) => {
  * @returns {Array}
  */
 export const createMatrix = (n, fill) => {
-  if (n === undefined) throw new Error("n is required");
-  if (fill === undefined) throw new Error("fill is required");
+    if (n === undefined) throw new Error("n is required");
+    if (fill === undefined) throw new Error("fill is required");
+
+
 };
 
 /**
@@ -64,6 +78,12 @@ export const createMatrix = (n, fill) => {
  * @returns {Boolean}
  */
 export const areWeCovered = (staff, day) => {
-  if (staff === undefined) throw new Error("staff is required");
-  if (day === undefined) throw new Error("day is required");
+    if (staff === undefined) throw new Error("staff is required");
+    if (day === undefined) throw new Error("day is required");
+
+    console.log('staff', staff);
+    console.log('day', day);
+    if (staff.length === 0) {
+        return false;
+    }
 };
