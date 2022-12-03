@@ -41,6 +41,64 @@ describe("sumMultiples", () => {
 
 });
 
+describe("isValidDNA", () => {
+    test("return true/false depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only", () => {
+        const str = "CGTA";
+        expect(isValidDNA(str)).toBe(true);
+    });
+    test("return true/false depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only", () => {
+        const str = "CGTA";
+        expect(isValidDNA(str)).toBe(true);
+    });
+    test("return true/false depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only", () => {
+        const str = "CBTA";
+        expect(isValidDNA(str)).toBe(false);
+    });
+    test("return true/false depending on whether it is a valid DNA string.  it should not be case sensitive", () => {
+        const str = "CgTA";
+        expect(isValidDNA(str)).toBe(true);
+    });
+    test("return true/false depending on whether it is a valid DNA string.  it should not be case sensitive", () => {
+        const str = "cgta";
+        expect(isValidDNA(str)).toBe(true);
+    });
+    test("return true/false depending on whether it is a valid DNA string.  it should not be case sensitive", () => {
+        const str = "cEtA";
+        expect(isValidDNA(str)).toBe(false);
+    });
+    test("return true/false depending on whether it is a valid DNA string.  it should not be case sensitive", () => {
+        const str = "cutA";
+        expect(isValidDNA(str)).toBe(false);
+    });
+    test("return false para null it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only", () => {
+        const str = "";
+        expect(isValidDNA(str)).toBe(false);
+    });
+});
+
+describe("getComplementaryDNA", () => {
+    test("receive a valid DNA string (see above) and should return a string of the complementary", () => {
+        const str = "CGTA";
+        expect(getComplementaryDNA(str)).toBe("GCAT");
+    });
+    test("receive a valid DNA string (see above) and should return a string of the complementary", () => {
+        const str = "GCAT";
+        expect(getComplementaryDNA(str)).toBe("CGTA");
+    });
+    test("receive a valid DNA string (see above) and should return a string of the complementary", () => {
+        const str = "AAAA";
+        expect(getComplementaryDNA(str)).toBe("TTTT");
+    });
+    test("receive a valid DNA use it should not be case sensitive string (see above) and should return a string of the complementary", () => {
+        const str = "gcat";
+        expect(getComplementaryDNA(str)).toBe("CGTA");
+    });
+    test("receive a null use it should not be case sensitive string (see above) and should return a string of the complementary", () => {
+        const str = "";
+        expect(getComplementaryDNA(str)).toBe("");
+    });
+});
+
 describe("createMatrix", () => {
     it("returns a Matrix of 1 x 1 when passes 1", () => {
         const result = createMatrix(1, "foo");
