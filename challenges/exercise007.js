@@ -130,4 +130,55 @@ export const hexToRGB = (hexStr) => {
  */
 export const findWinner = (board) => {
     if (board === undefined) throw new Error("board is required");
+
+    let xArray = [];
+    let yArray = [];
+    let arrayWin = [];
+    let win = null;
+
+    //array probability line x column
+    for (let i = 0; i < board.length; i++) {
+        let arrayLine = [];
+        let arrayColunn = [];
+        for (let j = 0; j < board.length; j++) {
+            arrayLine.push(i, j);
+            arrayColunn.push(j, i);
+        }
+        arrayWin.push(arrayLine);
+        arrayWin.push(arrayColunn);
+        //crusade adjustment
+        arrayWin.push([0, 0, 1, 1, 2, 2]);
+        arrayWin.push([0, 2, 1, 1, 2, 0]);
+
+    }
+
+    for (let i = 0; i < board.length; i++) {
+        for (let j = 0; j < board.length; j++) {
+            if (board[i][j] === 'X') {
+                xArray.push(i, j);
+            }
+            if (board[i][j] === '0') {
+                yArray.push(i, j);
+            }
+        }
+    }
+
+    //Verify X
+    for (let i = 0; i < arrayWin.length; i++) {
+        if (xArray.toString().includes(arrayWin[i].toString())) {
+            win = 'X';
+            break;
+        }
+    }
+
+    if (win === null) {
+        //Verify 0
+        for (let i = 0; i < arrayWin.length; i++) {
+            if (yArray.toString().includes(arrayWin[i].toString())) {
+                win = '0';
+                break;
+            }
+        }
+    }
+    return win;
 };

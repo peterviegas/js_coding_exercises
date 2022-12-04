@@ -124,5 +124,33 @@ describe("hexToRGB", () => {
     test("This function should transform the hex code into an RGB (Invalido - number of characters)", () => {
         expect(hexToRGB("#BEBEBEBE")).toStrictEqual("");
     });
+});
 
+describe("findWinner", () => {
+    test("The function should return X if player X has won, 0 if player 0 has won, and null if there is currently no winner (X)", () => {
+        const board = [
+            ['X', '0', null],
+            ['X', null, '0'],
+            ['X', null, '0']
+        ]
+        expect(findWinner(board)).toStrictEqual("X");
+    });
+
+    test("The function should return X if player X has won, 0 if player 0 has won, and null if there is currently no winner (0)", () => {
+        const board = [
+            ['X', '0', '0'],
+            [null, null, '0'],
+            ['X', null, '0']
+        ]
+        expect(findWinner(board)).toStrictEqual("0");
+    });
+
+    test("The function should return X if player X has won, 0 if player 0 has won, and null if there is currently no winner (null)", () => {
+        const board = [
+            ['X', '0', null],
+            [null, null, '0'],
+            ['X', null, '0']
+        ]
+        expect(findWinner(board)).toStrictEqual(null);
+    });
 });
