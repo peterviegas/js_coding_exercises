@@ -60,9 +60,31 @@ export const createRange = (start, end, step) => {
  * For example, if passed the above users and the date "2019-05-04" the function should return ["beth_1234"] as she used over 100 minutes of screentime on that date.
  * @param {Array} users
  */
-export const getScreentimeAlertList = (users, date) => {
+export const getScreentimeAlertList = (users, date, timer) => {
     if (users === undefined) throw new Error("users is required");
     if (date === undefined) throw new Error("date is required");
+
+    if (timer === undefined) {
+        timer = 100;
+    }
+
+    let getScreenTimeAlert = [];
+    for (let i = 0; i < users.length; i++) {
+        for (let j = 0; j < users[i].screenTime.length; j++) {
+            if (users[i].screenTime[j].date === date) {
+                let checkQuantity = 0;
+                for (let key in users[i].screenTime[j].usage) {
+                    checkQuantity += users[i].screenTime[j].usage[key];
+                }
+                if (checkQuantity >= timer) {
+                    //add output user
+                    getScreenTimeAlert.push(users[i].username);
+                }
+            }
+        }
+    }
+    return getScreenTimeAlert;
+
 };
 
 /**

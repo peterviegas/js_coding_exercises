@@ -53,3 +53,57 @@ describe("createRange", () => {
         expect(createRange(0, 0, 0)).toStrictEqual([0]);
     });
 });
+
+describe("getScreentimeAlertList", () => {
+    test(" return an array of usernames of users who have used more than 100 minutes of screentime for a given date.", () => {
+        const users = [{
+                name: "Beth Smith",
+                username: "beth_1234",
+                birthDate: "1977-06-25",
+                role: "Project Manager",
+                screenTime: [
+                    { date: "2019-05-01", usage: { twitter: 34, instagram: 22, facebook: 40 } },
+                    { date: "2019-05-02", usage: { twitter: 56, instagram: 40, facebook: 31 } },
+                    { date: "2019-05-03", usage: { twitter: 12, instagram: 15, facebook: 19 } },
+                    { date: "2019-05-04", usage: { twitter: 10, instagram: 56, facebook: 61 } },
+                ]
+            },
+            {
+                name: "Sam Jones",
+                username: "sam_j_1989",
+                birthDate: "1991-11-11",
+                role: "Software Engineer",
+                screenTime: [
+                    { date: "2019-05-01", usage: { twitter: 34, instagram: 28, facebook: 40 } },
+                    { date: "2019-05-03", usage: { twitter: 12, instagram: 15, facebook: 19 } },
+                    { date: "2019-06-11", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 10 } },
+                    { date: "2019-06-13", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 16 } },
+                    { date: "2019-06-14", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 31 } },
+                ]
+            },
+            {
+                name: "Anna Dolores",
+                username: "anna_1992",
+                birthDate: "1992-11-29",
+                role: "Software Engineer",
+                screenTime: [
+                    { date: "2019-05-01", usage: { twitter: 34, instagram: 22, facebook: 45 } },
+                    { date: "2019-05-03", usage: { twitter: 12, instagram: 15, facebook: 19 } },
+                    { date: "2019-06-11", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 10 } },
+                    { date: "2019-06-13", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 16 } },
+                    { date: "2019-06-14", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 31 } },
+                ]
+            },
+        ];
+
+        let result = ["beth_1234"];
+        expect(getScreentimeAlertList(users, "2019-05-04")).toStrictEqual(result);
+
+        result = ["sam_j_1989", "anna_1992"];
+        expect(getScreentimeAlertList(users, "2019-05-01")).toStrictEqual(result);
+
+        result = [];
+        expect(getScreentimeAlertList(users, "2019-05-03")).toStrictEqual(result);
+
+    });
+});
