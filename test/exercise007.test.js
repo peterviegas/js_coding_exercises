@@ -107,3 +107,22 @@ describe("getScreentimeAlertList", () => {
 
     });
 });
+
+describe("hexToRGB", () => {
+    test("This function should transform the hex code into an RGB", () => {
+        expect(hexToRGB("#FF1133")).toStrictEqual("rgb(255,17,51)");
+    });
+    test("This function should transform the hex code into an RGB (White)", () => {
+        expect(hexToRGB("#FFFFFF")).toStrictEqual("rgb(255,255,255)");
+    });
+    test("This function should transform the hex code into an RGB (Black)", () => {
+        expect(hexToRGB("#000000")).toStrictEqual("rgb(0,0,0)");
+    });
+    test("This function should transform the hex code into an RGB (Gray)", () => {
+        expect(hexToRGB("#BEBEBE")).toStrictEqual("rgb(190,190,190)");
+    });
+    test("This function should transform the hex code into an RGB (Invalido - number of characters)", () => {
+        expect(hexToRGB("#BEBEBEBE")).toStrictEqual("");
+    });
+
+});
