@@ -42,13 +42,13 @@ export function reverseAllWords(words) {
 export function countLinuxUsers(users) {
     if (users === undefined) throw new Error("users is required");
 
-    let cont = 0;
+    let count = 0;
     for (let i = 0; i < users.length; i++) {
         if (users[i].type === 'Linux') {
-            cont += 1;
+            count += 1;
         }
     }
-    return cont;
+    return count;
 }
 
 export function getMeanScore(scores) {
