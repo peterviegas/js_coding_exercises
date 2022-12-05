@@ -57,11 +57,9 @@ export function getCities(users) {
 
 export function getSquareRoots(nums) {
     if (!nums) throw new Error("nums is required");
-
-    const getSquareRoot = nums.map(function(item) {
+    return nums.map(function(item) {
         return parseFloat((Math.sqrt(item)).toFixed(2));
     });
-    return getSquareRoot;
 }
 
 export function findSentencesContaining(sentences, str) {
@@ -81,9 +79,7 @@ export function findSentencesContaining(sentences, str) {
 
 export function getLongestSides(triangles) {
     if (!triangles) throw new Error("triangles is required");
-
-    const getLongestSide = triangles.map(function(item) {
+    return triangles.map(function(item) {
         return Math.max(...(item));
     });
-    return getLongestSide;
 }
