@@ -50,11 +50,9 @@ export function getIntegers(nums) {
 
 export function getCities(users) {
     if (!users) throw new Error("users is required");
-
-    const getCities = users.map(function(item) {
+    return users.map(function(item) {
         return item.data.city.displayName;
     });
-    return getCities;
 }
 
 export function getSquareRoots(nums) {
