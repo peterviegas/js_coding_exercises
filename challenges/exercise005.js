@@ -3,17 +3,10 @@ export const findNextNumber = (nums, n) => {
     if (n === undefined) throw new Error("n is required");
 
     let pos = null;
-
     if ((nums.findIndex((element) => element === n) !== -1) && ((nums.findIndex((element) => element === n) + 1) < nums.length)) {
         pos = (nums.findIndex((element) => element === n) + 1);
     }
-
-    if (pos === null) {
-        return null;
-    } else {
-        return nums[pos];
-    }
-
+    return (pos === null) ? null : nums[pos];
 };
 
 export const count1sand0s = (str) => {
