@@ -16,11 +16,7 @@ export const count1sand0s = (str) => {
 
     for (let i = 0; i < str.length; i++) {
         const char = str[i];
-        if (frequencies[char] === undefined) {
-            frequencies[char] = 1;
-        } else {
-            frequencies[char] += 1;
-        }
+        (frequencies[char] === undefined) ? frequencies[char] = 1: frequencies[char] += 1;
     }
     return (frequencies);
 };
