@@ -126,9 +126,9 @@ export const hexToRGB = (hexStr) => {
 export const findWinner = (board) => {
     if (board === undefined) throw new Error("board is required");
 
-    let xArray = [];
-    let yArray = [];
-    let arrayWin = [];
+    const xArray = [];
+    const yArray = [];
+    const arrayWin = [];
     let win = null;
 
     //array probability line x column
