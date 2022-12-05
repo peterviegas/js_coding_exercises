@@ -100,21 +100,17 @@ export const hexToRGB = (hexStr) => {
     if (hexStr === undefined) throw new Error("hexStr is required");
 
     let strConv = '';
-    let hexStrAux = hexStr.slice(1);
-    let hexRgb = hexStrAux.match(/.{1,2}/g);
-    let rgbConv = [];
+    const hexStrAux = hexStr.slice(1);
+    const hexRgb = hexStrAux.match(/.{1,2}/g);
+    const rgbConv = [];
 
     for (let i = 0; i < hexRgb.length; i++) {
         rgbConv.push(parseInt(hexRgb[i], 16));
     }
-
     if (hexRgb.length === 3) {
         strConv += 'rgb(' + rgbConv.toString() + ')';
     }
-
     return strConv;
-
-
 };
 
 /**
