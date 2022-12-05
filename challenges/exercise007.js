@@ -5,8 +5,7 @@
 export const sumDigits = (n) => {
     if (n === undefined) throw new Error("n is required");
 
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    return n.reduce(reducer);
+    return n.reduce((accumulator, currentValue) => accumulator + currentValue);
 };
 
 /**
