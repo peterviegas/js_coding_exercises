@@ -90,9 +90,9 @@ export const createMatrix = (n, fill) => {
     if (n === undefined) throw new Error("n is required");
     if (fill === undefined) throw new Error("fill is required");
 
-    let arrayMatrix = []
+    const arrayMatrix = []
     for (let i = 0; i < n; i++) {
-        let arrayAux = [];
+        const arrayAux = [];
         for (let j = 0; j < n; j++) {
             arrayAux.push(fill);
         }
