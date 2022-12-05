@@ -23,7 +23,7 @@ export const createRange = (start, end, step) => {
     if (step === undefined || step === 0) {
         step = 1;
     }
-    let rangeCreate = [];
+    const rangeCreate = [];
     for (let i = start; i <= end; i += step) {
         rangeCreate.push(i);
     }
