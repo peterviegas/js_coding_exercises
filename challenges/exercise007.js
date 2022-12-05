@@ -133,8 +133,8 @@ export const findWinner = (board) => {
 
     //array probability line x column
     for (let i = 0; i < board.length; i++) {
-        let arrayLine = [];
-        let arrayColunn = [];
+        const arrayLine = [];
+        const arrayColunn = [];
         for (let j = 0; j < board.length; j++) {
             arrayLine.push(i, j);
             arrayColunn.push(j, i);
@@ -144,7 +144,6 @@ export const findWinner = (board) => {
         //crusade adjustment
         arrayWin.push([0, 0, 1, 1, 2, 2]);
         arrayWin.push([0, 2, 1, 1, 2, 0]);
-
     }
 
     for (let i = 0; i < board.length; i++) {
