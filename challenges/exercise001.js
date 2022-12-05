@@ -55,12 +55,10 @@ export function getMeanScore(scores) {
     if (scores === undefined) throw new Error("scores is required");
     let cont = 0;
     let scoreMed = 0;
-
     for (let i = 0; i < scores.length; i++) {
         cont += 1;
         scoreMed += scores[i];
     }
-
     return parseFloat((scoreMed / cont).toFixed(2));
 }
 

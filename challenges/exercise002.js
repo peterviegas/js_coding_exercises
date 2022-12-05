@@ -1,12 +1,10 @@
 export function getFillings(sandwich) {
     if (sandwich === undefined) throw new Error("ingredients is required");
-
     return sandwich.fillings
 }
 
 export function isFromManchester(person) {
     if (person === undefined) throw new Error("person is required");
-
     return person.city === 'Manchester'
 }
 
@@ -30,6 +28,5 @@ export function countSheep(arr) {
 
 export function hasMPostCode(person) {
     if (person === undefined) throw new Error("person is required");
-
     return person.address.city === 'Manchester';
 }
