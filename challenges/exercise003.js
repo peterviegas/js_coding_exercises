@@ -12,8 +12,8 @@ export function camelCaseWords(words) {
         if (i === 0) {
             wordCamelCase += words[i];
         } else {
-            let aux = words[i];
-            wordCamelCase += aux[0].toUpperCase() + aux.slice(1).toLowerCase();
+            let reversedWord = words[i];
+            wordCamelCase += reversedWord[0].toUpperCase() + reversedWord.slice(1).toLowerCase();
         }
     }
     return wordCamelCase
