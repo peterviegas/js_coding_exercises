@@ -10,8 +10,10 @@ export function isFromManchester(person) {
 
 export function getBusNumbers(people) {
     if (people === undefined) throw new Error("people is required");
-    const num = Math.trunc(people / 40)
-    return people % 40 > 0 ? num + 1 : num;
+    //const num = Math.trunc(people / 40)
+    //return people % 40 > 0 ? num + 1 : num;
+    //console.log(Math.ceil(7.004));
+    return Math.ceil(people / 40);
 }
 
 export function countSheep(arr) {
