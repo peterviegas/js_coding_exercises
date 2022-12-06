@@ -1,65 +1,32 @@
 export function findSmallNums(nums) {
     if (!nums) throw new Error("nums is required");
-
-    const smallNum = [];
-    nums.forEach((item) => {
-        if (item < 1) {
-            smallNum.push(item)
-        }
-    });
-    return smallNum;
+    return nums.filter((num) => num < 1);
 }
 
 export function findNamesBeginningWith(names, char) {
     if (!names) throw new Error("names is required");
     if (!char) throw new Error("char is required");
-
-    const namesBeginWith = [];
-    names.forEach((item) => {
-        if (item[0] === char) {
-            namesBeginWith.push(item)
-        }
-    });
-    return namesBeginWith;
+    return names.filter((item) => item[0] === char);
 }
 
 export function findVerbs(words) {
     if (!words) throw new Error("words is required");
-
-    const findVerb = [];
-    words.forEach((item) => {
-        const infinitive = item.split(" ");
-        if (infinitive[0] === 'to') {
-            findVerb.push(item)
-        }
-    });
-    return findVerb;
+    return words.filter((item) => item.split(" ")[0] === 'to');
 }
 
 export function getIntegers(nums) {
     if (!nums) throw new Error("nums is required");
-
-    const getInteger = [];
-    nums.forEach((item) => {
-        if (Number.isSafeInteger(item)) {
-            getInteger.push(item)
-        }
-    });
-    return getInteger;
+    return nums.filter((item) => Number.isSafeInteger(item));
 }
 
 export function getCities(users) {
     if (!users) throw new Error("users is required");
-    return users.map((item) => {
-        return item.data.city.displayName;
-    });
+    return users.map((item) => item.data.city.displayName);
 }
 
 export function getSquareRoots(nums) {
     if (!nums) throw new Error("nums is required");
-    return nums.map((item) => {
-        return parseFloat((Math.sqrt(item)).toFixed(2));
-    });
+    return nums.map((item) => parseFloat((Math.sqrt(item)).toFixed(2)));
 }
 
 export function findSentencesContaining(sentences, str) {
@@ -79,7 +46,5 @@ export function findSentencesContaining(sentences, str) {
 
 export function getLongestSides(triangles) {
     if (!triangles) throw new Error("triangles is required");
-    return triangles.map((item) => {
-        return Math.max(...(item));
-    });
+    return triangles.map((item) => Math.max(...(item)));
 }
