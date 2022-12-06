@@ -46,26 +46,17 @@ export function reverseAllWords(words) {
 
 export function countLinuxUsers(users) {
     if (users === undefined) throw new Error("users is required");
-
-    /*let count = 0;
-    for (let i = 0; i < users.length; i++) {
-        if (users[i].type === 'Linux') {
-            count += 1;
-        }
-    }
-    return count;*/
     return (users.filter((item) => item.type === 'Linux')).length;
 }
 
 export function getMeanScore(scores) {
     if (scores === undefined) throw new Error("scores is required");
-    let count = 0;
-    let scoreMed = 0;
-    for (let i = 0; i < scores.length; i++) {
-        count += 1;
-        scoreMed += scores[i];
-    }
-    return parseFloat((scoreMed / count).toFixed(2));
+
+    let sum = 0;
+    scores.forEach((item, idex) => {
+        sum += item;
+    });
+    return parseFloat((sum / scores.length).toFixed(2));
 }
 
 export function simpleFizzBuzz(n) {
