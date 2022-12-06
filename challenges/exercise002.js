@@ -10,22 +10,12 @@ export function isFromManchester(person) {
 
 export function getBusNumbers(people) {
     if (people === undefined) throw new Error("people is required");
-    //const num = Math.trunc(people / 40)
-    //return people % 40 > 0 ? num + 1 : num;
-    //console.log(Math.ceil(7.004));
     return Math.ceil(people / 40);
 }
 
 export function countSheep(arr) {
     if (arr === undefined) throw new Error("arr is required");
-    let count = 0;
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === 'sheep') {
-            count += 1;
-        }
-    }
-    return count
+    return (arr.filter((item) => (item.match('sheep')))).length;
 }
 
 export function hasMPostCode(person) {
