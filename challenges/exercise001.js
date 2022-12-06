@@ -1,4 +1,8 @@
 // Note: Be sure to check out all the exercises corresponding .md files (in docs)! 📘 👍
+//import {
+//   reverseWord,
+//} from "../challenges/exercise001";
+
 
 export function capitalize(word) {
     if (word === undefined) throw new Error("word is required");
@@ -31,14 +35,17 @@ export function getMiddleCharacter(str) {
 export function reverseWord(word) {
     if (word === undefined) throw new Error("word is required");
     //return (word.split(" ").reverse().map(wordInvert => wordInvert.split("").reverse().join(""))).join(" ");
-    return word.split(" ").reverse().reverse().join("").join(" ");
+    return word.split("").reverse().join("");
 
 }
 
 export function reverseAllWords(words) {
     if (words === undefined) throw new Error("words is required");
-    //return words.map(wordInvert => wordInvert.split("").reverse().join(""));
-    return words.split("").reverse().join("");
+    //console.log('anterior: ', words.map(wordInvert => wordInvert.split("").reverse().join("")));
+    //console.log('teste: ', words.map(wordInvert => wordInvert.split("").reverse().join("")));
+    //let arrayWord = words.map(wordInvert => wordInvert.split("").reverse().join(""));
+    return words.map(wordInvert => wordInvert.split("").reverse().join(""));
+    //return words.split("").reverse().join("");
 }
 
 export function countLinuxUsers(users) {
