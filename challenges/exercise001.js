@@ -41,11 +41,16 @@ export function reverseWord(word) {
 
 export function reverseAllWords(words) {
     if (words === undefined) throw new Error("words is required");
+
+    //console.log(reverseWord('teste'))
+    //return reverseWord('teste')
     //console.log('anterior: ', words.map(wordInvert => wordInvert.split("").reverse().join("")));
     //console.log('teste: ', words.map(wordInvert => wordInvert.split("").reverse().join("")));
     //let arrayWord = words.map(wordInvert => wordInvert.split("").reverse().join(""));
-    return words.map(wordInvert => wordInvert.split("").reverse().join(""));
     //return words.split("").reverse().join("");
+
+    //return words.map(wordInvert => wordInvert.split("").reverse().join(""));
+    return words.map(wordInvert => reverseWord(wordInvert));
 }
 
 export function countLinuxUsers(users) {

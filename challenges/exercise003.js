@@ -29,6 +29,7 @@ export function getTotalSubjects(people) {
         }
     }
     return subjects;
+    //return (people.filter((item) => item.subjects.length)).length;
 }
 
 export function checkIngredients(menu, ingredient) {
