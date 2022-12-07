@@ -23,15 +23,17 @@ export const isValidDNA = (str) => {
     if (str === undefined) throw new Error("str is required");
 
     const validDNA = ['C', 'G', 'T', 'A'];
-    let resultDNA = str.length > 0;
-
+    /*let resultDNA = str.length > 0;
     for (let i = 0; i < str.length; i++) {
         if (!validDNA.includes(str[i].toUpperCase())) {
             resultDNA = false;
             break;
         }
     }
-    return resultDNA;
+    return resultDNA;*/
+
+    return (str.split("").map((item) => validDNA.includes(item.toUpperCase()) ? true : false)).filter((el, i) => (str.split("").map((item) => validDNA.includes(item.toUpperCase()) ? true : false)).indexOf(el) === i).length === 1 ? true : false;
+
 };
 
 /**
