@@ -8,15 +8,9 @@ export const sumMultiples = (arr) => {
     if (arr === undefined) throw new Error("arr is required");
     if (!arr) throw new Error("arr is required");
     if (!Array.isArray(arr)) throw new Error("an Array is required");
-    // loop throught the array
-    // if the number / 3 or 5 (%), add to a total
-    // return total
+
     let total = 0;
-    arr.forEach(n => {
-        if (n % 5 === 0 || n % 3 === 0) {
-            total += n;
-        }
-    });
+    arr.filter((n) => (n % 5 === 0 || n % 3 === 0) ? total += n : 0);
     return total;
 };
 
