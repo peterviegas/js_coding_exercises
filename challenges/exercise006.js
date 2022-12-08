@@ -9,9 +9,10 @@ export const sumMultiples = (arr) => {
     if (!arr) throw new Error("arr is required");
     if (!Array.isArray(arr)) throw new Error("an Array is required");
 
-    let total = 0;
+    /*let total = 0;
     arr.filter((n) => (n % 5 === 0 || n % 3 === 0) ? total += n : 0);
-    return total;
+    return total;*/
+    return arr.length === 0 ? 0 : arr.map((number) => ((number % 5 === 0 || number % 3 === 0) ? number : 0)).reduce((num, count) => num + count);
 };
 
 /**
