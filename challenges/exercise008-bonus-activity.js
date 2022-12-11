@@ -27,11 +27,13 @@ export function addressLookUp(user) {
     if (!user) throw new Error("user is required");
     // Your solution using optional chaining here!
 
-    let postcode = undefined;
+    /*let postcode = undefined;
     if (user.address !== undefined) {
         if (user.address.postcode !== undefined) {
             postcode = user.address.postcode;
         }
     }
-    return postcode;
+    return postcode;*/
+
+    return user.address ?.postcode;
 }
