@@ -84,6 +84,8 @@ export const getScreentimeAlertList = (users, date, timer) => {
     }
     return getScreenTimeAlert;
 
+    //const dateUser = users.filter((item) => item.screenTime.filter(d => d.date === "2019-05-04"));
+    //console.log('primeiro', dateUser);
 };
 
 /**
@@ -99,7 +101,7 @@ export const getScreentimeAlertList = (users, date, timer) => {
 export const hexToRGB = (hexStr) => {
     if (hexStr === undefined) throw new Error("hexStr is required");
 
-    let strConv = '';
+    /*let strConv = '';
     const hexStrAux = hexStr.slice(1);
     const hexRgb = hexStrAux.match(/.{1,2}/g);
     const rgbConv = [];
@@ -110,7 +112,23 @@ export const hexToRGB = (hexStr) => {
     if (hexRgb.length === 3) {
         strConv += 'rgb(' + rgbConv.toString() + ')';
     }
-    return strConv;
+    return strConv;*/
+    //return hexStr.slice(1).match(/.{1,2}/g).map((item) => (parseInt(item, 16)));
+
+    const hexToInt = (hex) => {
+        return parseInt(hex, 16);
+    }
+
+    if (hexStr.length === 7) {
+        const red = hexToInt(hexStr.substring(1, 3))
+        const green = hexToInt(hexStr.substring(3, 5))
+        const blue = hexToInt(hexStr.substring(5, 7))
+        return `rgb(${red},${green},${blue})`
+    } else {
+        return "";
+    }
+
+
 };
 
 /**
